@@ -1,0 +1,14 @@
+.view {
+  background: #ff0000;
+  color: #fff;
+  padding: 5px 9px;
+  border-radius: 10%;
+  cursor: pointer;
+  float: right;
+}
+
+.job {
+  background: #f4f4f4;
+  padding: 10px;
+  border-bottom: 1px #ccc dotted;
+}
