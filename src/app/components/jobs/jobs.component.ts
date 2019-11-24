@@ -13,8 +13,9 @@ export class JobsComponent implements OnInit {
   constructor(private jobsService: JobsService) { }
 
   ngOnInit() {
-    this.jobsService.getJobs().subscribe(jobs => {
-       this.jobs = jobs
+    this.jobsService.getJobs().subscribe((jobs: any)  => {
+      console.log(jobs)
+       this.jobs = jobs.body
      });
   }
 

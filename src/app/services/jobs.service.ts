@@ -5,15 +5,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Job } from '../models/Job'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class JobsService {
-  jobsUrl: string = 'https://jsonplaceholder.typicode.com/todos';
+  jobsUrl: string = "http://localhost:3000/jobs";
 
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getJobs():Observable<Job[]> {
+  getJobs(): Observable<Job[]> {
     return this.http.get<Job[]>(this.jobsUrl);
   }
 }

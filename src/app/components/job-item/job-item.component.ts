@@ -16,7 +16,7 @@ export class JobItemComponent implements OnInit {
   }
 
   setClasses() {
-    console.log("hello")
+    console.log("hello I'm from job-item compnents from setCalsses method")
   }
 
   onView(job) {

@@ -1,4 +1,4 @@
 export class Job {
-  title: string;
-  id: number;
+    title: string;
+    id: number;
 }
