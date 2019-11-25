@@ -1,6 +1,19 @@
-<div [ngClass]='setClasses()'>
-
-  <p> {{ job.title }}
-    <button (click)='onView(job)'  class='view'>more details</button>
-  </p>
-</div>
+<table class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let job of jobs" >
+    <tr *ngIf="job.state == 'active'">
+      <td>{{ job.title }}</td>
+      <td>
+        <a routerLink="job/{{ job.id }}" class="btn btn-secondary btn-sm">
+          <i class="fa fa-arrow-circle-o-right">
+            Details
+          </i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,4 +1,5 @@
 export class Job {
-    title: string;
-    id: number;
-}
+         id: number;
+         title: string;
+         state: string;
+       }

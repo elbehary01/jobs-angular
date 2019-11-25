@@ -1,3 +1,7 @@
-<app-job-item *ngFor="let job of jobs" [job]='job' class="container">
-
-</app-job-item>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <app-job-item [jobs]="jobs"></app-job-item>
+    </div>
+  </div>
+</div>

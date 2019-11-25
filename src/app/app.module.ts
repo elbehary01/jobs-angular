@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { JobItemComponent } from './components/job-item/job-item.component';
+import { JobDetailsComponent } from './components/job-details/job-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JobsComponent,
-    JobItemComponent
+    JobItemComponent,
+    JobDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -21,4 +23,4 @@ import { JobItemComponent } from './components/job-item/job-item.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
