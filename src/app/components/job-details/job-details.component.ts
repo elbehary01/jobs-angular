@@ -10,17 +10,21 @@ import { Job } from 'src/app/models/Job';
 })
 export class JobDetailsComponent implements OnInit {
   id: string;
-  job: Job;
+  job: Job[];
+  item: Array<0>;
 
   constructor(
-    private router: Router,
     private route: ActivatedRoute,
     private jobsService: JobsService) { }
 
   ngOnInit() {
     // Get Id Form Url
     this.id = this.route.snapshot.params["id"];
-    this.jobsService.getSingleJob(this.id)
 
+    this.jobsService.getJobs().subscribe((jobs: any) => {
+      let item = this.job = jobs.body.filter(x => x.id === this.id);
+      console.log(item)
+      return this.job = item
+    });
   }
 }

@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<!-- <table class="table table-striped">
   <thead class="thead-inverse">
     <tr>
       <th>Title</th>
@@ -6,14 +6,37 @@
   </thead>
   <tbody *ngFor="let job of jobs" >
     <tr *ngIf="job.state == 'active'">
-      <td>{{ job.title }}</td>
-      <td>
-        <a routerLink="job/{{ job.id }}" class="btn btn-secondary btn-sm">
-          <i class="fa fa-arrow-circle-o-right">
-            Details
-          </i>
-        </a>
-      </td>
+      <a  routerLink="job/{{ job.id }}">
+        <td>{{ job.title }}</td>
+      </a>
     </tr>
   </tbody>
-</table>
+</table> -->
+
+<article *ngFor="let job of jobs" id="job-item-{{job.id}}" class="">
+  <div *ngIf="job.state == 'active'" >
+  <div class="">
+  <a href="/">
+    <img alt="myHammer AG" src="" class="">
+  </a>
+</div>
+<div class="">
+  <div class="">
+    <a routerLink="job/{{ job.id }}">
+      <h2 class="">{{job.title}} (w/m/d)</h2>
+    </a>
+  </div>
+  <div class="">MyHammer AG</div>
+  <ul class="">
+    <li class="">
+      <span class="" aria-hidden=""></span>
+      <time class="" datetime="" data-tid="104">vor 1 Tag</time>
+    </li>
+    <li class="">
+      <span class="" aria-hidden="true"></span>
+      {{job.city}}
+    </li>
+  </ul>
+</div>
+</div>
+</article>

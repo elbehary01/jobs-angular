@@ -18,7 +18,4 @@ export class JobsService {
     return this.http.get<Job[]>(this.jobsUrl);
   }
 
-  getSingleJob(id) {
-    console.log(id)
-  }
 }

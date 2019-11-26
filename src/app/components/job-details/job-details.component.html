@@ -1,21 +1,29 @@
-<div class="row">
-  <div class="col-md-6">
-    <a routerLink="/" class="btn btn-link">
-      <i href="" class="fa fa-arrow-circle-o-left"> Back To Dashboard</i>
-    </a>
+<div>
+  <div class="row">
+    <div class="col-md-6">
+      <a routerLink="/" class="btn btn-link">
+        <i href="" class="fa fa-arrow-circle-o-left"> Back To Dashboard</i>
+      </a>
+    </div>
   </div>
-</div>
-<hr />
+  <hr />
 
-<div *ngIf="jobs" class="card">
+<div *ngFor="let item of job" class="card">
   <h3 class="card-header">
-    {{ job.title }}
+    {{  item.title }}
   </h3>
   <div class="card-body">
     <div class="row">
     </div>
     <ul class="list-group">
-      <li class="list-group-item"></li>
+      <li class="list-group-item">Location: {{item.city}}, {{item.zip_code}}</li>
+      <li class="list-group-item">About Job:
+        <span>{{item.description}}</span>
+      </li>
+      <li class="list-group-item">This Job Created: {{item.created_at | date : format : timezone }}</li>
+      <li class="list-group-item">Deadline For Apply: {{item.end_date  | date : format : timezone }}</li>
     </ul>
   </div>
+  <button type="button" class="btn btn-primary btn-sm-1"> Apply </button>
+</div>
 </div>
