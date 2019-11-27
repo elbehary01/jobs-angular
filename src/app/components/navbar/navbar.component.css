@@ -1,0 +1,12 @@
+.navbar .navbar-brand{
+  color:#fff;
+  font-weight: bolder;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.nav-item{
+  color:#fff;
+  font-size: 18px;
+   cursor: pointer;
+}
