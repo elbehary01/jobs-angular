@@ -4,8 +4,8 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
 
 
-const routes: Routes = [
-  { path: "", component: JobsComponent },
+export const routes: Routes = [
+  { path: '', component: JobsComponent, pathMatch: 'full' },
   { path: "job/:id", component: JobDetailsComponent }
 ];
 
