@@ -1,35 +1,60 @@
-import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { TestBed, tick, fakeAsync, inject } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { Router } from '@angular/router';
+import { JobsComponent } from './components/jobs/jobs.component';
+import { JobDetailsComponent } from './components/job-details/job-details.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { routes } from './app-routing.module';
+import {Location} from "@angular/common"
+import { JobItemComponent } from './components/job-item/job-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { JobsService } from './services/jobs.service';
 
-describe('AppComponent', () => {
-  beforeEach(async(() => {
+
+
+describe('Router: App', () => {
+
+  let location: Location;
+  let router: Router;
+  let fixture;
+
+  beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
+      imports: [RouterTestingModule.withRoutes(routes), HttpClientTestingModule],
       declarations: [
-        AppComponent
+      JobsComponent,
+      JobItemComponent,
+      JobDetailsComponent,
+      AppComponent
       ],
-    }).compileComponents();
+       providers: [
+         JobsService
+       ]
+    });
+
+  router = TestBed.get(Router);
+  location = TestBed.get(Location);
+
+  fixture = TestBed.createComponent(AppComponent);
+  router.initialNavigation();
+  });
+
+  it('should get the from ApiJobs', inject([HttpTestingController, JobsService],
+    (httpMock: HttpTestingController, jobService: JobsService) => {
+      expect(jobService).toBeTruthy();
+    }
+  ))
+
+  it('should navigate to Jobs page', fakeAsync(() => {
+    router.navigate(['']);
+    tick();
+    expect(location.path()).toBe('/');
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'myHammer'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('myHammer');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('myHammer app is running!');
-  });
+  it('should navigate to JobDetails', fakeAsync(() => {
+    router.navigate(['/job/:id']);
+    tick();
+    expect(location.path()).toBe('/job/:id');
+  }));
 });
