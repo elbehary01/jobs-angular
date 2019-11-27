@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { JobItemComponent } from './components/job-item/job-item.component';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JobsComponent,
     JobItemComponent,
-    JobDetailsComponent
+    JobDetailsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
