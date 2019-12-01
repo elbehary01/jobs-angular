@@ -1,29 +1,37 @@
-<div>
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
-      <a routerLink="/" class="btn btn-link">
-        <i href="" class="fa fa-arrow-circle-o-left"> Back To Dashboard</i>
+    <div class="container col-6 my-3 ml-3">
+      <a routerLink="/" class="btn btn-outline-primary">
+        <i class="fa fa-arrow-circle-o-left fa-1x"> Back To Dashboard</i>
       </a>
     </div>
   </div>
-  <hr />
-
-<div *ngFor="let item of job" class="card">
-  <h3 class="card-header">
-    {{  item.title }}
-  </h3>
-  <div class="card-body">
+  <div class="container cl-10 mt-3 mx-auto">
     <div class="row">
+      <h3 class="mr-auto">
+        {{ job.title }}
+      </h3>
     </div>
-    <ul class="list-group">
-      <li class="list-group-item">Location: {{item.city}}, {{item.zip_code}}</li>
-      <li class="list-group-item">About Job:
-        <span>{{item.description}}</span>
-      </li>
-      <li class="list-group-item">This Job Created: {{item.created_at | date : format : timezone }}</li>
-      <li class="list-group-item">Deadline For Apply: {{item.end_date  | date : format : timezone }}</li>
-    </ul>
+    <div class="row justify-content-between px-3">
+      <p>
+        <i>{{ job.city }}, {{ job.zip_code }}</i>
+      </p>
+      <p>
+        <i>
+          {{ job.created_at | date: format:timezone }}
+        </i>
+      </p>
+    </div>
+    <div class="row mt-2 px-3">
+      <h6>{{ job.description }}</h6>
+    </div>
+    <div class="row mt-3 px-3">
+      <p><b>Deadline: </b>{{ job.end_date | date: format:timezone }}</p>
+    </div>
+    <div class="row mt-5">
+      <button type="button" class="btn mx-auto btn-outline-primary btn-lg">
+        Apply here
+      </button>
+    </div>
   </div>
-  <button type="button" class="btn btn-primary btn-sm-1"> Apply </button>
-</div>
 </div>
