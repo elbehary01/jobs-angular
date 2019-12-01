@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Job } from 'src/app/models/Job'
-
+import { Component, OnInit, Input } from "@angular/core";
+import { Job } from "src/app/models/Job";
 
 @Component({
   selector: "app-job-item",
@@ -12,6 +11,5 @@ export class JobItemComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }
