@@ -1,21 +1,18 @@
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-// import {NgModule } from '@angular/core';
+// import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+// import { NgModule } from "@angular/core";
 
-// import { JobDetailsComponent } from './job-details.component';
-// import { AppRoutingModule } from 'src/app/app-routing.module';
+// import { JobDetailsComponent } from "./job-details.component";
+// import { AppRoutingModule } from "src/app/app-routing.module";
 
-
-
-// describe('JobDetailsComponent', () => {
+// describe("JobDetailsComponent", () => {
 //   let component: JobDetailsComponent;
 //   let fixture: ComponentFixture<JobDetailsComponent>;
 
 //   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
 //       declarations: [JobDetailsComponent, AppRoutingModule],
-//       providers:[AppRoutingModule]
-//     })
-//     .compileComponents();
+//       providers: [AppRoutingModule]
+//     }).compileComponents();
 //   }));
 
 //   beforeEach(() => {
@@ -24,7 +21,7 @@
 //     fixture.detectChanges();
 //   });
 
-//   it('should create', () => {
+//   it("should create", () => {
 //     expect(component).toBeTruthy();
 //   });
 // });
