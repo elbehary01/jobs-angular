@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { JobsService } from 'src/app/services/jobs.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Job } from 'src/app/models/Job';
+import { Component, OnInit } from "@angular/core";
+import { JobsService } from "src/app/services/jobs.service";
+import { Router, ActivatedRoute } from "@angular/router";
+import { Job } from "src/app/models/Job";
 
 @Component({
   selector: "app-job-details",
@@ -15,16 +15,18 @@ export class JobDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private jobsService: JobsService) { }
+    private jobsService: JobsService
+  ) {}
 
   ngOnInit() {
     // Get Id Form Url
     this.id = this.route.snapshot.params["id"];
 
     this.jobsService.getJobs().subscribe((jobs: any) => {
-      let item = this.job = jobs.body.filter(x => x.id === this.id);
-      console.log(item)
-      return this.job = item
+      let item = jobs.body.filter(x => x.id === this.id);
+      console.log(item[0]);
+      this.job = item[0];
+      return this.job;
     });
   }
 }
