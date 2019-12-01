@@ -12,3 +12,10 @@
   padding: 10px;
   border-bottom: 1px #ccc dotted;
 }
+
+.company-name{
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
